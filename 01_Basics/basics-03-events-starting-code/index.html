@@ -24,8 +24,18 @@
 			<button v-on:click="reset">Reset</button>
 			<p>Result: {{ counter }}</p>
 
-			<input type="text" v-on:input="setName($event, 'Van Eeckhoutte')" />
-			<p>Your name: {{ name }}</p>
+			<input
+				type="text"
+				v-on:input="setName($event, 'Van Eeckhoutte')"
+				v-on:keyup.enter="confirmInput"
+			/>
+			<!-- When enter-key is pressed and released, update 'name' -->
+			<p>Your name: {{ confirmedName }}</p>
+			<!-- .prevent -> event modifier: prevents default behaviour that reloads page -->
+			<form v-on:submit.prevent="submitForm">
+				<input type="text" />
+				<button>Sign Up</button>
+			</form>
 		</section>
 	</body>
 </html>
