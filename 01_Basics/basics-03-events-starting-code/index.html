@@ -12,26 +12,18 @@
 		<script src="https://unpkg.com/vue@next" defer></script>
 		<script src="app.js" defer></script>
 	</head>
-
 	<body>
 		<header>
-			<h1>Vue Course Goals</h1>
+			<h1>Vue Events</h1>
 		</header>
-		<section id="user-goal">
-			<h2>My Course Goal</h2>
-			<p>{{ courseGoalA }}</p>
-			<p>{{ courseGoalB }}</p>
-			<p>{{ outputGoal() }}</p>
-			<div v-html="courseGoalC"></div>
-			<!-- In attributes we use v-bind: -->
-			<p>Learn more <a v-bind:href="courseLink">about Vue</a></p>
+		<section id="events">
+			<h2>Events in Action</h2>
+
+			<button v-on:click="add(5)">Add 5</button>
+			<button v-on:click="remove(5)">Remove 5</button>
+			<button v-on:click="reset">Reset</button>
+
+			<p>Result: {{ counter }}</p>
 		</section>
 	</body>
 </html>
-
-<!-- NOTES
-
-v-bind -> for attributes
-v-html -> for raw html code
-
--->
