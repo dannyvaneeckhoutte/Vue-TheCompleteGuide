@@ -2,6 +2,7 @@ const app = Vue.createApp({
 	data() {
 		return {
 			counter: 0,
+			name: "Danny",
 		};
 	},
 	methods: {
