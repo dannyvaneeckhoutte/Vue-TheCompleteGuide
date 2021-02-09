@@ -22,9 +22,6 @@ const app = Vue.createApp({
 		remove(num) {
 			return (this.counter = this.counter - num);
 		},
-		reset() {
-			return (this.counter = 0);
-		},
 	},
 });
 app.mount("#events");
