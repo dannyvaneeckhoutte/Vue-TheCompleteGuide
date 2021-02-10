@@ -48,13 +48,19 @@ The function that returns a data object for the component instance.
 
 #### methods
 
-Only use methods if you know you want to recalculate a value whenever anything changes, else use computed.
-Methods to be mixed into the component instance. You can access these methods directly on the VM instance, or use them in directive expressions. All methods will have their this context automatically bound to the component instance.
+- Use with event binding OR data binding
+- Data binding: Method is executed for every "re-render" cycle of the component
+- Use for events or data that really needs to be re-evaluated every time
 
 #### computed
 
-Computed properties are cached, and only re-computed on reactive dependency changes. Note that if a certain dependency is out of the instance's scope (i.e. not reactive), the computed property will not be updated.
+- Use with data binding, not event binding
+- Only re-evaluated if one of their "used values" changed
+- Use for data that depends on other data
 
 #### watch
 
-Are
+- Not used directly in the template
+- Watch any property, even computed
+- Allows to run code in reaction to changed data (e.g. send http request etc...)
+- Use for any non-data update you want to make
