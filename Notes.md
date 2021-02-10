@@ -64,3 +64,8 @@ The function that returns a data object for the component instance.
 - Watch any property, even computed
 - Allows to run code in reaction to changed data (e.g. send http request etc...)
 - Use for any non-data update you want to make
+
+### Shorthands
+
+- v-on:click === @click
+- v-bind:value === :value
